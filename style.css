@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: white;
+    background-color: rgb(233, 218, 219);
     color: rgb(4, 4, 31);
 }
 #header{
@@ -103,7 +103,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    
+    background: #bd0c44;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -120,6 +120,59 @@ nav ul li a:hover::after{
   color: #bd0c44;
   font-size: 14px;
 }
+.tab-contents {
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/*-----services----*/
+#services{
+    padding: 30px 0;
 
+}
+.services-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
 
-
+.services-list div{
+    background: rgb(188, 191, 233);
+    padding: 40px;
+    font-size:  13px;
+    font-weight: 300;
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a {
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+    color: black;
+}
+.services-list div:hover{
+    background: hsl(0, 100%, 50%);
+    color: white;
+    animation: swing 1s ease-out;
+}
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(9deg); }
+    40% { transform: rotate(-7deg); }
+    60% { transform: rotate(3deg); }
+    80% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}

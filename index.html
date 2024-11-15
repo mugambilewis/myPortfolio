@@ -7,6 +7,7 @@
       <title>Mugambi Lewis</title>
       
       <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/4c9a10e7ac.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="header">
@@ -41,9 +42,9 @@
             <p>An innovative and results-driven Mechanical Engineer with a unique blend of technical, creative, and cybersecurity expertise. I have combined my passion for design and programming to create efficient and secure solutions across a range of industries. I excel in designing mechanical systems, developing user-friendly web applications, crafting engaging graphics, building software, and securing digital environments, making me a versatile professional in all industries </p>
 
             <div class="tab-titles">
-              <p class="tab-links active-link">Skills</p>
-              <p class="tab-links">Experience</p>
-              <p class="tab-links">Education</p>
+              <p class="tab-links active-link" onclick ="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick ="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
             </div>
             <div class="tab-contents">
               <ul>
@@ -53,22 +54,29 @@
 
             </div>
 
-            <div class="tab-contents">
+            <div class="tab-contents active-tab" id="skills">
               <ul>
                 <li><span>Mechanical Engineering</span><br>Computer-Aided Design (CAD)<br>Mechanism Design and Kinematics</li>
                 <li><span>Web Designing</span><br>Internet sites and web pages </li>
-                <li><span>Degital Creative Proffesional</span><br>Graphics Design and Video Editing</li>
+                <li><span>Digital Creative Proffesional</span><br>Graphics Design and Video Editing</li>
               </ul>
 
 
             </div>
 
-            <div class="tab-contents">
+            <div class="tab-contents" id="experience">
               <ul>
                 <li><span>2021-2025</span><br>Bachelor of Technology in Mechanical Engineering</li>
                 <li><span>2024-2025</span><br>Certificates in Responsive Web Design,Javascript and Data Structures</li>
                
               </ul>
+
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li><span>2021-2025</span><br>Bachelor of Technology in Mechanical Engineering</li>
+                  <li><span>2024-2025</span><br>Certificates in Responsive Web Design,Javascript and Data Structures</li>
+                 
+                </ul>
 
 
             </div>
@@ -76,9 +84,46 @@
         </div>
       </div>
     </div>
-    <script>
-     const randomNumber = Math.random();
-     console.log(randomNumber);
+<!--services-->
+    <div id="services" >
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-gear" id="fontawesome"></i>
+            <h2>Mechanical Engineering</h2>
+            <p>I professionally design, analyze, and improve mechanical systems.<br>I use computer-aided design (CAD) software to create blueprints, perform simulations to test designs, and overseeing the manufacturing of prototypes.</p>
+            <a href="#">learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-code" id=" fontawesome"></i>
+            <h2>Web Design</h2>
+            <p>Looking for a Web and  Graphics designer, worry Less, You just met the best.
+              I develop and design amazing websites with the coolest styles and appealing graphics.</p>
+            <a href="#">learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-scroll" id="fontawesome" ></i>
+            <h2>Digital Creative Proffessional</h2>
+            <p>I showcase my graphics design skills through my work.I am a video Editor</p>
+            <a href="#">learn more</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+   <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+      </div>
+
+   </div>
+
+    <script src="script.js">
+    
     </script>
   </body>
 </html>
