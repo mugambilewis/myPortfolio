@@ -4,10 +4,16 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
       <title>Mugambi Lewis</title>
       
       <link rel="stylesheet" href="style.css">
-      <script src="https://kit.fontawesome.com/4c9a10e7ac.js" crossorigin="anonymous"></script>
+      
+      
+<script src="https://kit.fontawesome.com/4c9a10e7ac.js" crossorigin="anonymous"></script>
+
+
+
   </head>
   <body>
     <div id="header">
@@ -20,17 +26,31 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <i class="fa-solid fa-xmark"></i>
           </ul>
-          
+          <i class="fa-solid fa-bars"></i>
         </nav>
         <div class="header-text">
           <p>Engineer & Designer</p>
-          <h1>Hi,I'm <span>Mugambi</span><br>Lewis from Kenya</h1>
+          <h1>Hi,I'm <span id="mugambi">Mugambi</span><br>Lewis a <span id="typed-text"></span> </h1>
         </div>
+        <div class="intro">Passionate Frontend Engineer dedicated to crafting seamless, responsive, and visually stunning user experiences.<br> I blend creativity and technical expertise to bring ideas to life on the web. From interactive elements to performance<br> optimization, my mission is to make every pixel count and create digital journeys that engage and inspire. <br>Let’s build something beautiful together!</div>
+      
+        <div class="socialmedia-icons" >
+          <a href="https://www.linkedin.com/in/mugambi-lewis-64051332b" target="_blank"><button class="social-icon"><i class="fa-brands fa-linkedin"></i></button></a>
+          <a href="https://www.facebook.com/mugambilewis1" target="_blank"><button class="social-icon"><i class="fa-brands fa-facebook"></i></button></a>
+          <a href="https://x.com/_mugambilewis" target="_blank"><button class="social-icon"><i class="fa-brands fa-x-twitter"></i></button></a>
+          <a href="https://www.instagram.com/engineermugambilewis" target="_blank"><button class="social-icon"><i class="fa-brands fa-instagram"></i></button></a>
+          <a href="https://www.youtube.com/@engineermugambi" target="blank"><button class="social-icon"><i class="fa-brands fa-youtube"></i></button></a>
+        </div>
+
+        <button class="hire">Hire Me</button>
+        <div class="pic-background"></div>
       </div>
       
     </div>
     <!----about ---->
+  <main>
     <div id="about">
       <div class="container">
         <div class="row">
@@ -39,7 +59,7 @@
           </div>
           <div class="about-col-2">
             <h1 class="sub-title">About me</h1>
-            <p>An innovative and results-driven Mechanical Engineer with a unique blend of technical, creative, and cybersecurity expertise. I have combined my passion for design and programming to create efficient and secure solutions across a range of industries. I excel in designing mechanical systems, developing user-friendly web applications, crafting engaging graphics, building software, and securing digital environments, making me a versatile professional in all industries </p>
+            <p class="bio">An innovative and results-driven Mechanical Engineer with a unique blend of technical, creative, and cybersecurity expertise. I have combined my passion for design and programming to create efficient and secure solutions across a range of industries. I excel in designing mechanical systems, developing user-friendly web applications, crafting engaging graphics, building software, and securing digital environments, making me a versatile professional in all industries </p>
 
             <div class="tab-titles">
               <p class="tab-links active-link" onclick ="opentab('skills')">Skills</p>
@@ -89,14 +109,14 @@
       <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
-          <div>
+          <div class="mechanical">
             <i class="fa-solid fa-gear" id="fontawesome"></i>
             <h2>Mechanical Engineering</h2>
             <p>I professionally design, analyze, and improve mechanical systems.<br>I use computer-aided design (CAD) software to create blueprints, perform simulations to test designs, and overseeing the manufacturing of prototypes.</p>
             <a href="#">learn more</a>
           </div>
 
-          <div>
+          <div class="web-design">
             <i class="fa-solid fa-code" id=" fontawesome"></i>
             <h2>Web Design</h2>
             <p>Looking for a Web and  Graphics designer, worry Less, You just met the best.
@@ -104,7 +124,7 @@
             <a href="#">learn more</a>
           </div>
 
-          <div>
+          <div class="digital">
             <i class="fa-solid fa-scroll" id="fontawesome" ></i>
             <h2>Digital Creative Proffessional</h2>
             <p>I showcase my graphics design skills through my work.I am a video Editor</p>
@@ -112,18 +132,130 @@
           </div>
         </div>
       </div>
-
-
     </div>
-   <div id="portfolio">
+
+
+    <!--PORTFOLIO-->
+    <div id="portfolio">
       <div class="container">
         <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png">
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>The app is a breakdown game that is used by thousands of users</p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+             </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png">
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>The app brings coolest features and styles as you navigate the products</p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+             </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png">
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>The app has the simplest interactive and user friendly interfaces  </p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+             </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+
       </div>
-
    </div>
+  
 
-    <script src="script.js">
+   <!--CONTACT ME -->
+  
+  <div id="contact">
+    <div class="form-container">
+      <h2>Contact Me!</h2>
+      
+      <form name="submit-to-google-sheet">
+          <div class="input-group">
+              
+              <input type="text" name="Name" id="name" placeholder="Your Name"  required>
+              <input type="email" name="Email" id="email" placeholder="Your Email"  required>
+              <input type="text" name="Phone" id="phone" placeholder="Phone Number"  required>
+              <input type="text" name="Subject" id="subject" name="subject"   required>
+              
+              
+          </div>
+          <textarea rows="6" name="Message" placeholder="Your Message" id="message"></textarea>
+          <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+   <!--FOOTER-->
+   
+<footer>
+  <div class="footer-container">
+    <!-- Contact Information -->
+    <div class="footer-section contact-info">
+      <h2>Contact Us</h2>
+      <p>Nairobi,Kenya</p>
+      <p>Email: <a href="mailto:mugambilewis001@gmail.com">mugambilewis001@gmail.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+254 757844406</a></p>
+      <a href="PDFs/Mugambi Lewis Curriculum Vitae.pdf" class="btn btn2" download>Download</a>
+    </div>
     
+    <!-- Quick Links -->
+    <div class="footer-section quick-links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+   
+
+    <!-- Social Media -->
+    <div class="footer-section social-media">
+      <h2>Follow Us</h2>
+      <ul>
+        <a href="https://www.linkedin.com/in/mugambi-lewis-64051332b" target="_blank"><button class="social-footer"><i class="fa-brands fa-linkedin"></i></button></a>
+          <a href="https://www.facebook.com/mugambilewis1" target="_blank"><button class="social-footer"><i class="fa-brands fa-facebook"></i></button></a>
+          <a href="https://x.com/_mugambilewis" target="_blank"><button class="social-footer"><i class="fa-brands fa-x-twitter"></i></button></a>
+          <a href="https://www.instagram.com/engineermugambilewis" target="_blank"><button class="social-footer"><i class="fa-brands fa-instagram"></i></button></a>
+          <a href="https://www.youtube.com/@engineermugambi" target="blank"><button class="social-footer"><i class="fa-brands fa-youtube"></i></button></a>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 Mugambi Lewis. All Rights Reserved.</p>
+    <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+  </div>
+</footer>
+
+  </main>
+
+    
+    <script src="script.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbywOl6YyQi-v0W1f0wbEA0pmAnVUMISS-lFLQUyF5d9rPWYhL06tI7FW8zhbI9h0jFo/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
     </script>
+
   </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%; 
+      overflow: hidden; /* Hide the native scrollbar */
+    }
+
+    /* Locomotive Scroll Container */
+    [data-scroll-container] {
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    /* Sections with full height for scrolling */
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Styling Text and Image */
+    h1, h2, p {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    /* Scroll Animations */
+    h1[data-scroll] {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    section[data-scroll-section] {
+      background: #dfe7fd;
+    }
+
+    /* Add more styles for other sections */
+    section:nth-child(2) {
+      background: #f9dada;
+    }
+
+    section:nth-child(3) {
+      background: #a3d8f4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div data-scroll-container>
+    <!-- Section 1 -->
+    <section data-scroll-section>
+      <h1 data-scroll data-scroll-speed="2">Welcome to My Portfolio</h1>
+      <p data-scroll data-scroll-speed="1">Scroll down to see more amazing effects!</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section data-scroll-section>
+      <h2 data-scroll>My Projects</h2>
+      <img src="https://via.placeholder.com/600" alt="Project Image" data-scroll data-scroll-speed="-2">
+    </section>
+
+    <!-- Section 3 -->
+    <section data-scroll-section>
+      <h2 data-scroll>Contact Me</h2>
+      <p data-scroll>If you like what you see, let’s get in touch!</p>
+    </section>
+  </div>
+
+  <!-- Include Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Initialize Locomotive Scroll -->
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true, // Enable smooth scrolling
+      multiplier: 1.5, // Adjust scroll speed
+      smoothMobile: true // Enable smooth scrolling on mobile
+    });
+  </script>
+
+</body>
+
+</html>
