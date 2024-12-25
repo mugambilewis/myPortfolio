@@ -4,24 +4,16 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-body{
-    background-color: white;
-    color: rgb(3, 3, 41);
-    
-  }
- 
 
-#header{
+ 
+  #header{
     display: grid;
     grid-auto-flow: dense;
-    width: 100%;
-    height: 100vh;
+    
     background-image: url();
     background-position: center;
     background-color: #191645;
-    
-  
-}
+  }
 
 .container{
     padding: 10px 5%;
@@ -70,6 +62,27 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
+.pic-background{
+  height: 67vh;
+  width: 50vh;
+  border-radius: 50%;
+  background-color: white;
+  top: 25%;
+  position: absolute;
+  right: 5%;
+  object-fit: cover; 
+  background-image: url("images/webpic.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+ 
+}
+.pic-background:hover {
+  transform: scale(1.2);
+}
+
 .header-text{
   display: inline-flexbox;
   margin-top: 7%;
@@ -108,28 +121,8 @@ nav ul li a:hover::after{
     50% { color:  #43c6ac; }
     100% { color: white; }
   }
-  .pic-background{
-    height: 67vh;
-    width: 50vh;
-    border-radius: 50%;
-    background-color: white;
-    top: 25%;
-    position: absolute;
-    right: 5%;
-    object-fit: cover; /* Ensures image covers entire container */
-    background-image: url("images/webpic.png");
-    background-size: cover; /* Ensures the image covers the oval */
-    background-position: center; /* Centers the image inside the oval */
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-   
-  }
-  .pic-background:hover {
-    transform: scale(1.2);
-  }
   
- 
+  
 .header-text h1 {
     font-size: 60px;
     margin-top: 20px;
@@ -137,7 +130,7 @@ nav ul li a:hover::after{
 #mugambi {
     color: white;
     display: inline-block;
-  animation: bounce 2s 3;
+    animation: bounce 2s 3;
 }
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
@@ -189,7 +182,11 @@ nav ul li a:hover::after{
     background: #43c6ac;
   
   }
-
+  .coverpage-details{
+    left: 70vh;
+  }
+  
+  
  
 #about {
     background-color: #191645;
@@ -420,6 +417,7 @@ nav ul li a:hover::after{
 
 /*--contact me--*/
 /* Form container styling */
+/*
 #contact {
     
     display: flex;
@@ -430,65 +428,57 @@ nav ul li a:hover::after{
     font-family: Arial, sans-serif;
     background-color: #191645;
 }
-
+*/
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    width: 38%;
-    height: 40%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background-color: rgb(219, 216, 216);
-    border: 3px solid #191645;
-    margin-right: 10px;
-    display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
    
+
+  width: 55%; /* Adjust as needed */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #43c6ac;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+}
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 15px; /* Space between inputs */
+  margin-bottom: 15px;
 }
 
 /* Centering the heading */
 .form-container h2 {
     margin: 0 0 20px;
     text-align: center;
-    color: #191645;
+    color: white;
+    padding: 10px;
    
 }
 
 /* Grid layout for the input fields */
-.input-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
-    
-}
 
 /* Full-width textarea */
 textarea {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    resize: vertical;
+  grid-column: span 2; /* Spans across two columns */
+  resize: none;
 }
 
 /* Styling for input and textarea */
 input[type="text"],input[type="email"], textarea {
-    padding: 8px;
-    background-color: rgb(219, 211, 211);
-    border: 1px solid #191645;
-    border-radius: 4px;
-    font-size: 1em;
-    border-color: #191645;
-    margin-top: 20px;
-    color: #191645;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #43c6ac;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
-
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #43c6ac;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 /* Optional: Style the submit button */
 button {
     margin-top: 40px;
@@ -521,7 +511,7 @@ footer {
   padding: 2rem 1rem;
   font-family: Arial, sans-serif;
   width: 100%;
-  margin-top: 2px;
+  margin-top: 20vh;
 }
 
 .footer-container {
@@ -665,10 +655,14 @@ nav .fa-solid {
 /*----css for small screens---*/
 @media only screen and (max-width: 500px){
   #header .pic-background {
-    width: 150px;
-    height: 200px
+    left: 5%;
+    top: 10%;
+    width: 45vw;
+    height: 35vh;
   }
-    
+  .form-container {
+   width: 80%; /* Adjust as needed */
+  }
   
   .header-text{
   font-size: 16px;
@@ -686,8 +680,8 @@ nav .fa-solid {
     background: #43c6ac;
     position: fixed;
     top: 0;
-    right: -200px;
-    width: 200px;
+    right: -150px;
+    width: 150px;
     height: 100vh;
     padding-top: 50px;
   }
