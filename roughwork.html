@@ -1,116 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #333;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        canvas {
-            background-color: #000;
-            border: 2px solid #fff;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Snake Game</title>
+	<style>
+		.card {
+			margin: 0 auto;
+			padding: 2em;
+			width: 300px;
+			background: #1c1f2b;
+			text-align: center;
+			border-radius: 10px;
+			position: relative;
+			color: white;
+		}
+		@property --angle{
+			syntax: "<angle>";
+			initial-value: 0deg;
+			inherits: false;
+		}
+		.card::after, .card::before{
+			
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-image: conic-gradient(from var(--angle), red , blue);
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			z-index: -1;
+			padding: 4px;
+			border-radius: 10px;
+			animation: 3s spin linear infinite;
+		}
+		.card::before{
+			filter: blur(1.5rem);
+			opacity: 0.5;
+		}
+		@keyframes spin{
+			from{
+				--angle: 0deg;
+			}
+			to{
+				--angle: 360deg;
+			}
+		}
+	</style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <script>
-      const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-
-const boxSize = 20; // Size of each square in the grid
-const rows = canvas.height / boxSize;
-const cols = canvas.width / boxSize;
-
-let snake = [{ x: 10, y: 10 }]; // Initial snake position
-let direction = { x: 0, y: 0 }; // Initial movement direction
-let food = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
-let score = 0;
-
-// Draw a square
-function drawBox(x, y, color) {
-    ctx.fillStyle = color;
-    ctx.fillRect(x * boxSize, y * boxSize, boxSize, boxSize);
-}
-
-// Place food on the canvas
-function placeFood() {
-    food.x = Math.floor(Math.random() * cols);
-    food.y = Math.floor(Math.random() * rows);
-}
-
-// Main game loop
-function gameLoop() {
-    // Move the snake
-    const head = {
-        x: snake[0].x + direction.x,
-        y: snake[0].y + direction.y
-    };
-
-    // Check collision with walls
-    if (head.x < 0 || head.x >= cols || head.y < 0 || head.y >= rows) {
-        alert("Game Over! Your score: " + score);
-        document.location.reload();
-    }
-
-    // Check collision with itself
-    for (const segment of snake) {
-        if (head.x === segment.x && head.y === segment.y) {
-            alert("Game Over! Your score: " + score);
-            document.location.reload();
-        }
-    }
-
-    // Add the new head to the snake
-    snake.unshift(head);
-
-    // Check if the snake eats food
-    if (head.x === food.x && head.y === food.y) {
-        score++;
-        placeFood();
-    } else {
-        // Remove the tail if no food was eaten
-        snake.pop();
-    }
-
-    // Draw the game state
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBox(food.x, food.y, "red");
-    snake.forEach(segment => drawBox(segment.x, segment.y, "lime"));
-}
-
-// Listen for arrow key presses to change direction
-document.addEventListener("keydown", event => {
-    switch (event.key) {
-        case "ArrowUp":
-            if (direction.y === 0) direction = { x: 0, y: -1 };
-            break;
-        case "ArrowDown":
-            if (direction.y === 0) direction = { x: 0, y: 1 };
-            break;
-        case "ArrowLeft":
-            if (direction.x === 0) direction = { x: -1, y: 0 };
-            break;
-        case "ArrowRight":
-            if (direction.x === 0) direction = { x: 1, y: 0 };
-            break;
-    }
-});
-
-// Run the game loop every 100ms
-setInterval(gameLoop, 100);
-
-
-
-    </script>
+   <div class="card">
+			<h1>Animate Borders</h1>
+			<p>
+				Looking for a Web and  Graphics designer, worry Less, You just met the best.
+        I develop and design amazing websites with the coolest styles and appealing graphics.
+			</p>
+   </div>
 </body>
 </html>

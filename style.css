@@ -3,27 +3,39 @@
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+   
 }
 
  
   #header{
-    display: grid;
-    grid-auto-flow: dense;
-    
-    background-image: url();
-    background-position: center;
+   
     background-color: #191645;
   }
 
 .container{
     padding: 10px 5%;
     position: relative;
+    z-index: 0;
+    background-color: #191645;
    
 }
-
-
+/*
+.cover-page{
+  display: grid;
+  grid-template-areas: 
+    "nav"
+    "pic-background coverpage-details "
+    "socialmedia-icons hire"
+  
+  ;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 0.2fr 1fr auto;
+  gap: 10px;
+  height: 100vh;
+}
 
 nav {
+  grid-area: nav;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,26 +75,35 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .pic-background{
-  height: 67vh;
-  width: 50vh;
+  grid-area: pic-background;
+  
   border-radius: 50%;
   background-color: white;
-  top: 25%;
-  position: absolute;
-  right: 5%;
   object-fit: cover; 
   background-image: url("images/webpic.png");
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  overflow: hidden;
-  transition: transform 0.2s ease;
  
-}
+  /*transition: transform 0.2s ease;
+ 
+}*/
+.pic-background{
+  border-radius: 50%;
+  background-color: white;
+  object-fit: cover; 
+  background-image: url("images/webpic.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+} 
 .pic-background:hover {
   transform: scale(1.2);
 }
 
+.coverpage-details{
+  grid-area: coverpage-details;
+}
 .header-text{
   display: inline-flexbox;
   margin-top: 7%;
@@ -138,15 +159,16 @@ nav ul li a:hover::after{
     60% { transform: translateY(-15px); }
   }
   .intro {
-    margin-top: 23px;
+    
     font-family: Oeo Script;
     font-size: 17px;
     color: white;
   }
 
   .socialmedia-icons{
+    grid-area: socialmedia-icons;
     display: flex;
-    margin-top: -10px;
+    
     max-width: 100px;
       
   }
@@ -166,6 +188,7 @@ nav ul li a:hover::after{
  
   
   .hire {
+    grid-area: hire;
     background-color: #191645;
     cursor: pointer;
     display: block;
@@ -181,43 +204,74 @@ nav ul li a:hover::after{
   .hire:hover{
     background: #43c6ac;
   
-  }
-  .coverpage-details{
-    left: 70vh;
-  }
+  }*/
   
   
- 
+ /*----------about----*/
 #about {
     background-color: #191645;
     padding: 80px 0;
     padding-bottom: 10px;
     color: rgb(4, 4, 31);
-    
+    z-index: 0;
     width: 100%;
 }
-/*.about-me-pic{
-  background: url("images/user.png");
-  
-  border-radius: 15px;
-  background-color: rgb(216, 210, 210);
 
-}*/
 .row {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
+    
 }
 .about-col-1 {
     flex-basis: 35%;
-    background-color: rgb(218, 203, 203);
-    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    
 }
+.glowing-border{
+  position: relative;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.glowing-border::after, .glowing-border::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #43c6ac , blue, red, #43c6ac);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+	z-index: -1;
+  padding: 4px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+.glowing-border::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
 .about-col-1 img {
     width: 100%;
-    
-    
+    height: auto;
+    display: block;
+  
 }
+
 .about-col-2{
     flex-basis: 60%;
 }
@@ -260,7 +314,7 @@ nav ul li a:hover::after{
   color: white;
 }
 .tab-contents ul li span {
-  color: #ee4b00;
+  color: #43c6ac;
   font-size: 14px;
 }
 .tab-contents {
@@ -286,21 +340,61 @@ nav ul li a:hover::after{
 }
 
 .services-list div{
-    background: rgb(188, 191, 233);
-    padding: 40px;
+    background: white;
+    padding: 50px;
     font-size:  13px;
     font-weight: 300;
     border-radius: 10px;
     display: inline-block;
-    transition: transform 0.5s ease-in-out;
+   transition: transform 0.5s ease-in-out;
     
 }
 
+.services-list div {
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+  padding: 2em;
+}
 
- 
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.services-list div::after, .services-list div::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 50%, #43c6ac);
+		top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+.services-list div::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
 
 .services-list div:hover {
-  transform: scale(1.1);
+  transform: scale(1.1)
+}
+
+.services-list div:hover::before, .services-list div:hover::after {
+ display: none;
 }
 .services-list div i {
     font-size: 50px;
@@ -417,24 +511,20 @@ nav ul li a:hover::after{
 
 /*--contact me--*/
 /* Form container styling */
-/*
+
 #contact {
     
-    display: flex;
-    align-items: center;
-    justify-content: center;
     
-    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #191645;
 }
-*/
+
 
 .form-container {
    
-
+ 
   width: 55%; /* Adjust as needed */
-  margin: 20px auto;
+  margin:  auto;
   padding: 20px;
   border: 1px solid #43c6ac;
   border-radius: 8px;
@@ -483,7 +573,6 @@ input:focus, textarea:focus {
 button {
     margin-top: 40px;
     padding: 10px;
-    
     width: 100%;
     border: none;
     border-radius: 5px;
@@ -508,10 +597,13 @@ button:hover {
 footer {
   background-color: #191645;
   color: #ffffff;
-  padding: 2rem 1rem;
+  padding-top: 20vh;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-family: Arial, sans-serif;
   width: 100%;
-  margin-top: 20vh;
+  
 }
 
 .footer-container {
@@ -661,7 +753,7 @@ nav .fa-solid {
     height: 35vh;
   }
   .form-container {
-   width: 80%; /* Adjust as needed */
+   width: 90%; /* Adjust as needed */
   }
   
   .header-text{
