@@ -46,9 +46,19 @@ function erase() {
 }
 
 // Start the typing animation
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
   setTimeout(type, delayBetweenWords);
 });
-
-c
+document.addEventListener('DOMContentLoaded', () => {
+  const slideInElement = document.querySelector('.slideinleft');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        slideInElement.classList.add('active');
+      }
+    });
+  });
+  observer.observe(slideInElement);
+});
+*/
  

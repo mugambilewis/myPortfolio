@@ -3,8 +3,180 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/4c9a10e7ac.js" crossorigin="anonymous"></script>
 	<title>Snake Game</title>
 	<style>
+    *{
+      margin: 0;
+      padding: 5px;
+      font-family: 'poppins', sans-serif;
+      box-sizing: border-box;
+    
+    }
+    #header{
+      height: 100vh;
+      background-color: #191645;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo{
+      width: 100px;
+      left: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 10px 20px;
+      color: white;
+    }
+    nav ul li a {
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+      color: white;
+    }
+    nav ul li a::after{
+      content: '';
+      width: 0px;
+      height:3px;
+      background: #43c6ac;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.5s;
+    
+    }
+    nav ul li a:hover::after{
+     width: 100%;
+    }
+    .coverpage{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .pic-background{
+      width: 25%;
+      height: 60vh;
+      left: 5%;
+      top: 40%;
+      border-radius: 50%;
+      background-color: white;
+      object-fit: cover; 
+      background-image: url("images/webpic.png");
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+      transition: transform 0.2s ease;
+    }
+    .pic-background:hover {
+      transform: scale(1.2);
+    }
+    .coverpage-details{
+      
+      margin-left: 5%;
+    }
+    .header-text{
+  display: inline-flexbox;
+  margin-top: 7%;
+  animation: slide 2s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+  animation: colorChange 5s infinite;
+  
+}
+#typed-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+
+@keyframes slide {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes colorChange {
+    0% { color: gold; }
+    50% { color:  #43c6ac; }
+    100% { color: white; }
+  }
+  .header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+#mugambi {
+    color: white;
+    display: inline-block;
+    animation: bounce 2s 3;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+  .intro {
+    
+    font-family: Oeo Script;
+    font-size: 17px;
+    color: white;
+  }
+
+  .socialmedia-icons{
+    grid-area: socialmedia-icons;
+    display: flex;
+       
+  }
+  .social-icon{
+    background-color: #43c6ac;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+.hire {
+    background-color: #191645;
+    cursor: pointer;
+    display: block;
+    width:fit-content;
+    border:1px solid #43c6ac;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+  }
+  .hire:hover{
+    background: #43c6ac;
+  
+  }
+
+
+
+
+
+
+
 		.card {
 			margin: 0 auto;
 			padding: 2em;
@@ -50,7 +222,45 @@
 	</style>
 </head>
 <body>
-   <div class="card">
+	<div id="header">
+    <nav>
+      <img src="images/logo.png" class="logo">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+        <i class="fa-solid fa-xmark"></i>
+      </ul>
+      <i class="fa-solid fa-bars"></i>
+    </nav>
+      
+    <div class="coverpage">
+      <div class="pic-background"></div>
+    <div class="coverpage-details">
+      <div class="header-text">
+        <p>Engineer & Designer</p>
+        <h1>Hi,I'm <span id="mugambi">Mugambi</span><br>Lewis a <span id="typed-text"></span> </h1>
+      </div>
+      <div class="intro">Passionate Frontend Engineer dedicated to crafting seamless, responsive, and visually stunning user experiences.<br> I blend creativity and technical expertise to bring ideas to life on the web. From interactive elements to performance<br> optimization, my mission is to make every pixel count and create digital journeys that engage and inspire. <br>Let’s build something beautiful together!
+      </div>
+      
+      <div class="socialmedia-icons" >
+        <a href="https://www.linkedin.com/in/mugambi-lewis-64051332b" target="_blank"><button class="social-icon"><i class="fa-brands fa-linkedin"></i></button></a>
+        <a href="https://www.facebook.com/mugambilewis1" target="_blank"><button class="social-icon"><i class="fa-brands fa-facebook"></i></button></a>
+        <a href="https://x.com/_mugambilewis" target="_blank"><button class="social-icon"><i class="fa-brands fa-x-twitter"></i></button></a>
+        <a href="https://www.instagram.com/engineermugambilewis" target="_blank"><button class="social-icon"><i class="fa-brands fa-instagram"></i></button></a>
+        <a href="https://www.youtube.com/@engineermugambi" target="blank"><button class="social-icon"><i class="fa-brands fa-youtube"></i></button></a>
+      </div>
+
+      <button class="hire">Hire Me</button>
+    </div>
+    </div>
+    
+  </div>
+   
+  <div class="card">
 			<h1>Animate Borders</h1>
 			<p>
 				Looking for a Web and  Graphics designer, worry Less, You just met the best.
