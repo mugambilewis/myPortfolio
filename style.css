@@ -191,7 +191,10 @@ nav ul li a:hover::after{
   }
   .hire:hover{
     background: #43c6ac;
-  
+  }
+  hire:hover.stars {
+    display: block;
+    filter: drop-shadow(0 0 10px #fffdef);
   }
   
   
@@ -315,6 +318,86 @@ nav ul li a:hover::after{
 }
 
 
+/*-----skills----*/
+#skills {
+  background-color: #191645;
+  color: white;
+  padding: 30px 0;
+}
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.skill:nth-child(2) {
+  transition-delay: 200ms;
+}
+.skill:nth-child(3) {
+  transition-delay: 300ms;
+}
+.skill:nth-child(4) {
+  transition-delay: 400ms;
+}
+.skill:nth-child(5) {
+  transition-delay: 500ms;
+}
+
+.skill:nth-child(6) {
+  transition-delay: 600ms;
+}
+.skill:nth-child(7) {
+  transition-delay: 700ms;
+}
+.skill:nth-child(8) {
+  transition-delay: 800ms;
+}
+
+.skill:nth-child(9) {
+  transition-delay: 900ms;
+}
+.skill:nth-child(10) {
+  transition-delay: 1000ms;
+}
+.skill:nth-child(11) {
+  transition-delay: 1100ms;
+}
+.skill:nth-child(12) {
+  transition-delay: 1200ms;
+}
+
+.skill {
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+
+
+}
+.skill h2 {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.skill img{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
 /*-----services----*/
 #services{
     padding: 30px 0;
@@ -335,18 +418,15 @@ nav ul li a:hover::after{
     padding: 50px;
     font-size:  13px;
     font-weight: 300;
-    border-radius: 10px;
     display: inline-block;
-   transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    padding: 2em;
     
 }
 
-.services-list div {
-  margin: 0 auto;
-  border-radius: 10px;
-  position: relative;
-  padding: 2em;
-}
 
 @property --angle{
   syntax: "<angle>";
@@ -414,6 +494,12 @@ nav ul li a:hover::after{
   grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
+}
+.work:nth-child(2) {
+  transition-delay: 200ms;
+}
+.work:nth-child(3) {
+  transition-delay: 400ms;
 }
 .work{
   border-radius: 10px;
@@ -750,7 +836,7 @@ nav .fa-solid {
     top: 0;
     right: -150px;
     width: 150px;
-    height: 100vh;
+    height: auto;
     padding-top: 50px;
   }
   nav ul li {
