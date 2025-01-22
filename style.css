@@ -245,37 +245,6 @@ span{
   margin: 0 auto;
   border-radius: 15px;
 }
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-.glowing-border::after, .glowing-border::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), #43c6ac , blue, red, #43c6ac);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-	z-index: -1;
-  padding: 4px;
-  border-radius: 15px;
-  animation: 3s spin linear infinite;
-}
-.glowing-border::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
-}
-@keyframes spin{
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
-}
 
 .about-col-1 img {
     width: 100%;
@@ -459,7 +428,7 @@ span{
     
 }
 
-
+/*
 @property --angle{
   syntax: "<angle>";
   initial-value: 0deg;
@@ -492,12 +461,13 @@ span{
   }
 }
 
-.services-list div:hover {
-  transform: scale(1.1)
-}
+
 
 .services-list div:hover::before, .services-list div:hover::after {
  display: none;
+}*/
+.services-list div:hover {
+  transform: scale(1.1)
 }
 .services-list div i {
     font-size: 50px;

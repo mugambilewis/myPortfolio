@@ -72,3 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
  const hiddenElements = document.querySelectorAll('.hidden');
  hiddenElements.forEach((el) => observer.observe(el));
  
+ const currentYear = new Date().getFullYear();
+
+// Display the current year in the footer
+document.getElementById('current-year').textContent = currentYear;
